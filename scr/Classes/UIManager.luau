@@ -33,7 +33,7 @@ function UIManager.new(): UIManager
 
     self._Maid = Maid.new()
     self._Window = self._Library:CreateWindow({
-        Title = "Ink Game Cheats | Script Author: Jorsan | UI Library: Linoria",
+        Title = game:GetService("MarketplaceService"):GetProductInfo(109983668079237).Name .. " | Prismistix",
         Center = true,
         AutoShow = true,
         TabPadding = 8,
@@ -80,38 +80,31 @@ function UIManager._SetupTabs(self: UIManager)
 end
 
 function UIManager._SetupMainCheatsTab(self: UIManager)
-    local RoundCheatsGroup = self._Tabs.Main:AddLeftGroupbox("Round Cheats")
-    
-    -- Red Light Green Light God Mode
-    RoundCheatsGroup:AddToggle("RedLightGodMode", {
-        Text = "Red Light God Mode",
-        Default = false,
-        Tooltip = "Prevents you from being eliminated during Red Light Green Light"
-    })
+    local RoundCheatsGroup = self._Tabs.Main:AddLeftGroupbox("Round Cheats"
     
     -- Tug of War Auto Pull
     RoundCheatsGroup:AddToggle("TugOfWarAuto", {
-        Text = "Tug of War Auto Pull",
+        Text = "Auto Tug Of War",
         Default = false,
         Tooltip = "Automatically pulls during Tug of War game"
     })
     
     -- Dalgona Auto Complete
     RoundCheatsGroup:AddToggle("DalgonaAuto", {
-        Text = "Dalgona Auto Complete",
+        Text = "Auto Dalgona",
         Default = false,
         Tooltip = "Automatically completes the Dalgona cookie challenge"
     })
 
     -- Mingle power hold minigame/QTE Auto solver
     RoundCheatsGroup:AddToggle("MinglePowerHoldAuto", {
-        Text = "Mingle Auto Minigame Solver",
+        Text = "Auto Mingle & Power Hold",
         Default = false,
         Tooltip = "Automatically completes the Mingle power hold minigame/QTE"
     })
     
     -- ESP/Visuals
-    local VisualsGroup = self._Tabs.Main:AddRightGroupbox("Visuals")
+    local VisualsGroup = self._Tabs.Main:AddRightGroupbox("Visual ESP")
 
     VisualsGroup:AddLabel("Hide And Seek")
 
@@ -122,9 +115,9 @@ function UIManager._SetupMainCheatsTab(self: UIManager)
     })
 
     VisualsGroup:AddToggle("HunterESP", {
-        Text = "Seeker ",
+        Text = "Seeker ESP",
         Default = false,
-        Tooltip = "Visually shows where the hunters are located and their status"
+        Tooltip = "Visually shows where the Seekers are located and their status"
     })
 
     VisualsGroup:AddDivider()
@@ -156,8 +149,11 @@ function UIManager._SetupPlayerTab(self: UIManager)
         Compact = false,
         Suffix = " studs/s"
     })
+
+    -- Add divider
     PlayerSettings:AddDivider()
 
+    -- NoClip Toggle
     PlayerSettings:AddToggle("Noclip", {
         Text = "Noclip",
         Default = false,
@@ -246,11 +242,11 @@ function UIManager._SetupSettingsTab(self: UIManager)
     local MenuSettings = self._Tabs.Settings:AddLeftGroupbox("Menu Settings")
     
     MenuSettings:AddButton({
-        Text = "DEsTroY ScRiPT",
+        Text = "Unload/Destroy Script",
         Func = function()
             self:Destroy()
         end,
-        Tooltip = "001111100111010110011101011"
+        Tooltip = "Completely removes and destroys the script"
     })
 end
 
